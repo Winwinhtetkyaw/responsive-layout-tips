@@ -7,3 +7,93 @@ ul,
 ol {
   list-style-type: none;
 }
+
+li {
+  background: blue;
+  border: 1px solid wheat;
+  color: #fff;
+  padding: 5px;
+}
+
+.container {
+  max-width: 1040px;
+  padding: 0 20px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.parent {
+  border: 5px solid hotpink;
+  padding: 10px;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.auto-grid {
+  --min-column-size: 300px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-column-size), 100%), 1fr)
+  );
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+}
+
+.flexible-flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.flexible-flex > * {
+  flex: 1;
+}
+
+.reel {
+  --gap: 10px;
+  display: grid;
+  gap: var(--gap);
+  grid-auto-flow: column;
+  grid-auto-columns: 50%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: var(--gap);
+}
+
+/* .reel > * {
+  scroll-snap-align: start;
+} */
+
+.main-with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: start;
+  /* align-content: start; */
+}
+
+.main-with-sidebar > :first-child {
+  flex-basis: 500px;
+  flex-grow: 9999;
+}
+
+.main-with-sidebar > :last-child {
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+
+.childern {
+  background: blue;
+  color: white;
+  border: 3px solid wheat;
+  padding: 5px;
+}
+
+.childern > * {
+  margin-bottom: 15px;
+}
